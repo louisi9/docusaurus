@@ -10,6 +10,7 @@ import {
   useLockBodyScroll,
   useNavbarMobileSidebar,
 } from '@docusaurus/theme-common/internal';
+import {useThemeConfig} from '@docusaurus/theme-common';
 import NavbarMobileSidebarLayout from '@theme/Navbar/MobileSidebar/Layout';
 import NavbarMobileSidebarHeader from '@theme/Navbar/MobileSidebar/Header';
 import NavbarMobileSidebarPrimaryMenu from '@theme/Navbar/MobileSidebar/PrimaryMenu';
@@ -17,9 +18,12 @@ import NavbarMobileSidebarSecondaryMenu from '@theme/Navbar/MobileSidebar/Second
 
 export default function NavbarMobileSidebar(): JSX.Element | null {
   const mobileSidebar = useNavbarMobileSidebar();
+  const {
+    navbar: {alwaysRenderMobileSidebar},
+  } = useThemeConfig();
   useLockBodyScroll(mobileSidebar.shown);
-
-  if (!mobileSidebar.shouldRender) {
+  //
+  if (!mobileSidebar.shouldRender && !alwaysRenderMobileSidebar) {
     return null;
   }
 

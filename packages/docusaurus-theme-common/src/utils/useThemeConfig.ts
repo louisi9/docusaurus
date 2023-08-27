@@ -41,6 +41,13 @@ export type Navbar = {
   title?: string;
   items: NavbarItem[];
   logo?: NavbarLogo;
+  /**
+   * Always render the Mobile Sidebar, even when above the
+   * default breakpoint for the desktop view of 996px.
+   *
+   * Defaults to ```false```.
+   */
+  alwaysRenderMobileSidebar?: boolean;
 };
 
 export type ColorModeConfig = {

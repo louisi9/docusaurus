@@ -57,6 +57,7 @@ export const DEFAULT_CONFIG: ThemeConfig = {
   navbar: {
     hideOnScroll: false,
     items: [],
+    alwaysRenderMobileSidebar: false,
   },
   tableOfContents: {
     minHeadingLevel: 2,
@@ -361,6 +362,9 @@ export const ThemeConfigSchema = Joi.object<ThemeConfig>({
       .default(DEFAULT_CONFIG.navbar.items),
     title: Joi.string().allow('', null),
     logo: LogoSchema,
+    alwaysRenderMobileSidebar: Joi.boolean().default(
+      DEFAULT_CONFIG.navbar.alwaysRenderMobileSidebar,
+    ),
   }).default(DEFAULT_CONFIG.navbar),
   footer: Joi.object({
     style: Joi.string().equal('dark', 'light').default('light'),
