@@ -47,7 +47,7 @@ export type Navbar = {
    *
    * Defaults to ```false```.
    */
-  alwaysRenderMobileSidebar?: boolean;
+  disableSidebarUnmounting?: boolean;
 };
 
 export type ColorModeConfig = {

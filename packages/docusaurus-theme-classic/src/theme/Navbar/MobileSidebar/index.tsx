@@ -19,11 +19,12 @@ import NavbarMobileSidebarSecondaryMenu from '@theme/Navbar/MobileSidebar/Second
 export default function NavbarMobileSidebar(): JSX.Element | null {
   const mobileSidebar = useNavbarMobileSidebar();
   const {
-    navbar: {alwaysRenderMobileSidebar},
+    navbar: {disableSidebarUnmounting},
   } = useThemeConfig();
+
   useLockBodyScroll(mobileSidebar.shown);
   //
-  if (!mobileSidebar.shouldRender && !alwaysRenderMobileSidebar) {
+  if (!mobileSidebar.shouldRender && !disableSidebarUnmounting) {
     return null;
   }
 

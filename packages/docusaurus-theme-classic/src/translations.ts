@@ -94,7 +94,7 @@ function translateNavbar(
         ...(subItems ? {items: subItems} : undefined),
       };
     }),
-    alwaysRenderMobileSidebar: navbar.alwaysRenderMobileSidebar,
+    disableSidebarUnmounting: navbar.disableSidebarUnmounting,
   };
 }
 
